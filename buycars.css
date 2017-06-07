@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+h1 {
+	font-family: 'Love Ya Like A Sister', georgia;
+	letter-spacing: 4px;
+	color:blue;
+	font-size: 72px;
+	padding-top: .5em;
+	padding-left: .5em;
+}

@@ -1,0 +1,136 @@
+/* main.css */
+
+body {
+	font-family: comic ;
+	background-color: grey;
+}
+div.wrapper {
+	max-width: 1220px;
+	margin: 0 auto;
+}
+
+header { 
+ 
+
+	background-image: url(images/main.jpg);
+	
+	background-repeat: repeat-x;
+	position: bottom;
+	height: 158px;
+	width: 100%;
+	
+} 
+ header h1 {
+	font-family: 'Love Ya Like A Sister', georgia;
+	letter-spacing: 4px;
+	font-size: 72px;
+	padding-top: .5em;
+	padding-left: .5em;
+} 
+
+
+nav ul {
+	
+	margin-bottom: 50px;
+	
+	padding: 0;
+	
+}
+nav ul li {
+	list-style: none;
+	float: left;
+	font-size: 93%;
+}
+nav ul li a {
+	display: block;
+	font-weight: bold;
+	padding: .625em 3.5em; /* 10px 15px */
+	text-decoration: none;
+	color: #000;
+	background-color: grey;
+}
+img {
+	max-width: 100%;
+	margin-top: 30px;
+	}
+	
+
+#col1 {
+	float: left;
+	width: 30%;
+	margin: 1em 1em 1em 2em;
+}
+#col2 {
+	float: left;
+	width: 30%;
+	margin: 1em 2em 0 0;
+	padding-left: 20px;
+}
+#col3{
+	float: left; 
+	width: 30%;
+	margin-top: 1em;	
+}
+footer {
+		clear: both;
+}
+
+footer h3 {
+	font-family: 'Love Ya Like A Sister', georgia;
+	background-color: #94d4ff;
+	padding: .5em 0 .5em .5em;
+	background-repeat: repeat-x;
+	position: bottom;
+	margin-top: 600px;
+}
+.dropbtn {
+	background-color:inherit;
+	font-weight: bold;
+  
+   cursor: pointer;
+   padding: .500em 3.5em; /* 10px 15px */
+	text-decoration: none;
+	color: #000;
+	
+}
+
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+   
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px;
+    z-index: 1;
+    
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: #f9f9f9;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover 
+.dropdown-content {
+    display: block;
+}
+
+iframe {
+    margin-top: 100px;
+    margin-bottom: 5px;
+    margin-right: 150px;
+    margin-left: 350px;
+}
+
+footer
+{
+	margin-top:10px;
+}
+

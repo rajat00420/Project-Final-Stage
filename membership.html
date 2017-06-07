@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login Form</title>
+<link href="http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet" type="text/css">
+<link href="main.css" rel="stylesheet">
+
+<script>
+	function checkRePassword(document) {	
+	  var pwd = document.getElementById("password");
+  	  var pwd_msg = document.getElementById('pwd_msg');
+	  var repwd = document.getElementById("rePassword");	  
+	  if (pwd.value != repwd.value) {
+		pwd_msg.innerHTML = "The two passwords are not the same.";
+		repwd.value = "";
+		pwd.focus();
+		return false;
+	  }
+	  else {
+		pwd_msg.innerHTML = "";  
+	  }  
+	  return true;
+	}	
+
+	function checkZIPCode(document) {
+	  var zip = document.getElementById("zip");
+	  var zip_msg = document.getElementById("zip_msg");
+	  var isNum = /^[0-9]{4}$/.test(zip.value); // 4 digits
+	  if(!isNum) {
+		zip_msg.innerHTML = "4 digits are required.";
+		zip.focus();
+		return false;
+	  }
+	  else {
+		zip_msg.innerHTML = "";  
+	  }  
+	  return true;		
+	}
+
+	function validateInfo(document) { 
+	  if ( checkRePassword(document) && checkZIPCode(document) )
+	  { 
+		return true;
+	  }
+	  return false;
+	}
+	
+	function changeYellowColor(id) {
+		document.getElementById(id).style.backgroundColor = "yellow";
+	}
+
+	function changeWhiteColor(id) {
+		document.getElementById(id).style.backgroundColor = "white";
+	}
+	
+	function reset_frm(document) {
+		document.getElementById('pwd_msg').innerHTML = "";
+		document.getElementById("zip_msg").innerHTML = "";	
+	}
+		
+</script>
+</head>
+<body>
+<div class="wrapper">
+<header><h1>Car Craze</h1>
+
+<nav>
+
+			<ul>
+			<li><a href="index.php">Home</a></li>
+			<li>
+            <div class="dropdown">
+  <button class="dropbtn">Buy Cars</button>
+  <div class="dropdown-content">
+    <a href="newcars.html">New Cars</a>
+    <a href="usedcars.html">Used Cars</a>
+   
+  </div>
+</div></li>
+			<li><a href="insurance.html">Insurance</a></li>
+			<li><a href="aboutus.php">About Us</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="login.html">Login/Sign Up</a></li>
+			</ul>		
+			
+		
+</nav>
+</header>
+<div class="member_frm">
+<br/><br/><br/><br/><h1>New Membership Form</h1>
+<h2>Please enter your profile</h2>
+<p><i>Fields marked with an asterisk (*) must be entered.</i></p>
+<form action="membership_process.php" method="post">
+	<div class="row">
+		<div class="col">
+        	<label for="name">* Name:</label>
+            <input type="text" id="name" name="name" size="35" maxlength="50"
+            	onBlur="changeWhiteColor(id)"
+                onFocus="changeYellowColor(id)" required />
+        </div>
+	</div>
+    <div class="row">
+		<div class="col">
+        	<label for="dob">* DOB:</label>
+            <input type="text" id="dob" name="dob" size="35" maxlength="50"
+            	onBlur="changeWhiteColor(id)"
+                onFocus="changeYellowColor(id)" required />
+        </div>
+	</div>
+    <div class="row">
+    	<div class="col">
+        	<label for="email">* Email:</label>
+            <input type="email" id="email" name="email" size="35" maxlength="50" 
+            	onBlur="changeWhiteColor(id)"
+                onFocus="changeYellowColor(id)" required />
+        </div>
+    </div>
+     <div class="row">
+		<div class="col">
+        	<label for="Address">* Address:</label>
+            <input type="text" id="address" name="address" size="35" maxlength="50"
+            	onBlur="changeWhiteColor(id)"
+                onFocus="changeYellowColor(id)" required />
+        </div>
+	</div>
+    <div class="row">
+    	<div class="col">
+        	<label for="password">* Password:</label>
+            <input type="password" id="password" name="password" size="20" maxlength="20" 
+            	onBlur="changeWhiteColor(id)"
+                onFocus="changeYellowColor(id)" required />
+        </div>
+        <div class="col error_msg" id="pwd_msg">
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col">
+        	<label for="confirmpassword">* Confirm Password:</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" size="20" maxlength="20"
+            	onChange="checkRePassword(document)"
+                onBlur="changeWhiteColor(id)"
+                onFocus="changeYellowColor(id)" />
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col">
+        	<label for="zip">* Postcode:</label>
+            <input type="text" id="postcode" name="postcode" size="4" maxlength="4" placeholder="4 digits"
+               	onChange="checkZIPCode(document)"
+                onBlur="changeWhiteColor(id)"
+                onFocus="changeYellowColor(id)" />
+        </div>
+        <div class="col error_msg" id="zip_msg">
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col">
+        	<label>&nbsp;</label>
+            <input type="submit" id="submit" value="Submit" 
+            	onClick="return validateInfo(document)" />
+            <input type="reset" id="reset" value="Clear Form" onClick="reset_frm(document)" />
+        </div>
+    </div>
+    
+    
+    
+</form>
+</div>
+</div>
+</body>
+</html>
+
+
+
